@@ -188,7 +188,7 @@ export const ChatPage2 = () => {
     try {
       const API_BASE_URL = import.meta.env.VITE_API_URL;
       const response = await axios.get(
-        `/api/messages/history/${user1}/${user2}`
+        `${API_BASE_URL}/api/messages/history/${user1}/${user2}`
       );
 
       if (response.status === 200) {
