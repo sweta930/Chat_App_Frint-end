@@ -97,9 +97,9 @@ export const ChatPage2 = () => {
   const onError = (err) => {
     console.error("WebSocket connection error:", err);
   };
-
+  const API_BASE_URL = import.meta.env.VITE_API_URL;
   const connect = () => {
-    let sock = new SockJS("http://localhost:8080/ws");
+    let sock = new SockJS("${API_BASE_URL}/ws");
     stompClient = over(sock);
     stompClient.connect({}, onConnect, onError);
   };
@@ -186,8 +186,9 @@ export const ChatPage2 = () => {
 
   const fetchChatHistory = async (user1, user2) => {
     try {
+      const API_BASE_URL = import.meta.env.VITE_API_URL;
       const response = await axios.get(
-        `http://localhost:8080/api/messages/history/${user1}/${user2}`
+        `${API_BASE_URL}/api/messages/history/${user1}/${user2}`
       );
 
       if (response.status === 200) {

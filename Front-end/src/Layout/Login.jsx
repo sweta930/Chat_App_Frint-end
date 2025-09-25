@@ -23,10 +23,10 @@ export const Login = () => {
   const handleLogin = async () => {
     try {
       setError("");
-
+      const API_BASE_URL = import.meta.env.VITE_API_URL;
       if (username && password) {
         const response = await axios.post(
-          "http://localhost:8080/api/users/login",
+          "${API_BASE_URL}/api/users/login",
           {
             username,
             password,

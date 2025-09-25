@@ -20,9 +20,9 @@ const SignupForm = ({ onSignupSuccess }) => {
         password,
       };
       console.log("Sending payload:", payload);
-
+       const API_BASE_URL = import.meta.env.VITE_API_URL;
       const response = await axios.post(
-        "http://localhost:8080/api/users/signup",
+        "${API_BASE_URL}/api/users/signup",
         payload
       );
 
