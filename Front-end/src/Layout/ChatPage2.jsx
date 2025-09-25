@@ -99,7 +99,7 @@ export const ChatPage2 = () => {
   };
   const API_BASE_URL = import.meta.env.VITE_API_URL;
   const connect = () => {
-    let sock = new SockJS(`${API_BASE_URL}/ws`);
+    let sock = new SockJS(`/ws`);
     stompClient = over(sock);
     stompClient.connect({}, onConnect, onError);
   };
@@ -188,7 +188,7 @@ export const ChatPage2 = () => {
     try {
       const API_BASE_URL = import.meta.env.VITE_API_URL;
       const response = await axios.get(
-        `${API_BASE_URL}/api/messages/history/${user1}/${user2}`
+        `/api/messages/history/${user1}/${user2}`
       );
 
       if (response.status === 200) {

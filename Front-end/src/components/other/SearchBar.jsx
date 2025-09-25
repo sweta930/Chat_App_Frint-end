@@ -16,7 +16,7 @@ const SearchBar = ({ onUserSelect }) => {
       const API_BASE_URL = import.meta.env.VITE_API_URL;
       setError(null);
       const response = await axios.get(
-        `${API_BASE_URL}/api/users/search?username=${username}`
+        `/api/users/search?username=${username}`
       );
       setSearchResults(response.data ? [response.data] : []);
     } catch (error) {
