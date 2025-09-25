@@ -99,7 +99,7 @@ export const ChatPage2 = () => {
   };
   const API_BASE_URL = import.meta.env.VITE_API_URL;
   const connect = () => {
-    let sock = new SockJS("${API_BASE_URL}/ws");
+    let sock = new SockJS(`${API_BASE_URL}/ws`);
     stompClient = over(sock);
     stompClient.connect({}, onConnect, onError);
   };

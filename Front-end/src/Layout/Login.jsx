@@ -26,7 +26,7 @@ export const Login = () => {
       const API_BASE_URL = import.meta.env.VITE_API_URL;
       if (username && password) {
         const response = await axios.post(
-          "${API_BASE_URL}/api/users/login",
+          `${API_BASE_URL}/api/users/login`,
           {
             username,
             password,
